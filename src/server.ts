@@ -29,15 +29,18 @@ import {Response, Request, Express} from 'express'
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-  app.get("filteredimage", async (req: Request, res: Response) => {
+  app.get("/filteredimage", async (req: Request, res: Response) => {
     const image_url = req.query.image_url.toString();
-    if (image_url) {
+    if (!image_url) {
       res.status(400).send("we need your IMAGE URL");
     }
-    const filteredImage = await filterImageFromURL(image_url);
-    res.status(200).sendFile(filteredImage, () => {
-      deleteLocalFiles([filteredImage]);
-    });
+    else {
+      const filteredImage = await filterImageFromURL(image_url);
+      res.status(200).sendFile(filteredImage, () => {
+        deleteLocalFiles([filteredImage]);
+      });
+    }
+    
   });
   //! END @TODO1
   
