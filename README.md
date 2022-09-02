@@ -47,7 +47,17 @@ Prevent requests without valid authentication headers.
 Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
 > !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
 
+## Specifications Met
 
+### New Endpoint Created
 
-### MY ELASTIC BEANSTALK ENDPOINT URL
-http://udagram-dev22222222.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/DCTM_Penguin_UK_DK_AL526630_wkmzns.jpg
+A new endpoint was created and added to the `./src/server.ts` which uses query parameter to download images from a public URL, filter the image and return the result.
+
+### Elastic Beanstalk Deployment
+
+An endpoint URL which responds to a valid GET response was created for a running Elastic Beanstalk.
+[Elastic Beanstalk URL](http://udagram-dev22222222.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/DCTM_Penguin_UK_DK_AL526630_wkmzns.jpg)
+
+### GitHub repository URL
+
+[GitHub repository URL](https://github.com/Abasi-ifreke/Udagram-Uwem) is made available for validation.
